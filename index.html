@@ -12,127 +12,107 @@
     <meta name="twitter:description" content="Self-taught full stack engineer passionate about building elegant solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-gradient"></div>
+    <!-- Sun rays background effect -->
+    <div class="background-rays">
+        <div class="ray ray-1"></div>
+        <div class="ray ray-2"></div>
+        <div class="ray ray-3"></div>
+    </div>
     
-    <nav class="navigation">
-        <ul class="nav-links">
-            <li><a href="#" class="nav-link active">home</a></li>
-            <li><a href="#skills" class="nav-link">skills</a></li>
-            <li><a href="#projects" class="nav-link">projects</a></li>
-            <li><a href="#contact" class="nav-link">contact</a></li>
-        </ul>
+    <!-- Desktop Navigation (top left) -->
+    <nav class="desktop-nav">
+        <a href="#" class="nav-link active">home</a>
+        <a href="#about" class="nav-link">about</a>
+        <a href="#skills" class="nav-link">skills</a>
+        <a href="#contact" class="nav-link">contact</a>
+    </nav>
+
+    <!-- Mobile Navigation (bottom floating glass bar) -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-container">
+            <button class="mobile-nav-link active" data-target="#">home</button>
+            <button class="mobile-nav-link" data-target="#about">about</button>
+            <button class="mobile-nav-link" data-target="#skills">skills</button>
+            <button class="mobile-nav-link" data-target="#contact">contact</button>
+        </div>
     </nav>
 
     <main class="main-content">
-        <div class="container">
-            <section class="hero fade-in">
+        <div class="content-wrapper">
+            <div class="sidebar">
                 <h1 class="hero-title">Joel</h1>
-                <p class="hero-subtitle">
-                    self-taught, full stack engineer with a passion for crafting elegant solutions. 
-                    fascinated by building things that work beautifully.
-                </p>
                 
-                <div class="social-links">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"/>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
-                            <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"/>
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:hello@joel.dev" class="social-link" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
-                            <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
-                            <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
-                        </svg>
-                    </a>
-                </div>
-            </section>
-
-            <section id="skills" class="section fade-in delay-1">
-                <h2 class="section-title">philosophy</h2>
-                <div class="philosophy-list">
-                    <p>- ship fast, iterate faster</p>
-                    <p>- write code that tells a story</p>
-                    <p>- never stop learning</p>
-                </div>
-            </section>
-
-            <section class="section fade-in delay-2">
-                <h2 class="section-title">skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon js">JS</div>
-                        <span class="skill-name">JavaScript</span>
+                <div class="content-sections">
+                    <div class="section-block">
+                        <p class="bio">
+                            self-taught, full stack engineer with a passion for crafting elegant solutions. 
+                            fascinated by building things that work beautifully.
+                        </p>
+                        
+                        <div class="link-row">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-link">github</a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-link">Twitter (X)</a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-link">linkedin</a>
+                            <a href="mailto:hello@joel.dev" target="_blank" rel="noopener noreferrer" class="text-link">message</a>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon ts">TS</div>
-                        <span class="skill-name">TypeScript</span>
+
+                    <div id="about" class="section-block">
+                        <h3 class="section-title">philosophy</h3>
+                        <div class="philosophy-list">
+                            <p>- ship fast, with intention</p>
+                            <p>- great interaction follows intuition</p>
+                            <p>- habitualize excellence</p>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon rust">🦀</div>
-                        <span class="skill-name">Rust</span>
+
+                    <div id="skills" class="section-block">
+                        <h3 class="section-title">skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <p><span class="skill-name">JavaScript</span></p>
+                                <p class="skill-desc">frontend & backend development</p>
+                            </div>
+                            <div class="skill-item">
+                                <p><span class="skill-name">TypeScript</span></p>
+                                <p class="skill-desc">type-safe applications</p>
+                            </div>
+                            <div class="skill-item">
+                                <p><span class="skill-name">Rust</span></p>
+                                <p class="skill-desc">systems programming</p>
+                            </div>
+                            <div class="skill-item">
+                                <p><span class="skill-name">Java</span></p>
+                                <p class="skill-desc">enterprise applications</p>
+                            </div>
+                            <div class="skill-item">
+                                <p><span class="skill-name">Python</span></p>
+                                <p class="skill-desc">scripting & automation</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon java">☕</div>
-                        <span class="skill-name">Java</span>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon python">🐍</div>
-                        <span class="skill-name">Python</span>
+
+                    <div id="contact" class="section-block">
+                        <h3 class="section-title">let's connect</h3>
+                        <p class="bio">
+                            I'm always open to discussing new projects, creative ideas, or opportunities.
+                        </p>
+                        <a href="mailto:hello@joel.dev" class="text-link">hello@joel.dev</a>
                     </div>
                 </div>
-            </section>
 
-            <section id="projects" class="section fade-in delay-3">
-                <h2 class="section-title">what I do</h2>
-                <div class="about-content">
-                    <p>
-                        I'm a <strong>full stack engineer</strong> who loves turning complex problems into 
-                        simple, elegant solutions. From building scalable backend systems to crafting 
-                        pixel-perfect user interfaces, I enjoy the entire spectrum of software development.
-                    </p>
-                    <p>
-                        Being <strong>self-taught</strong> has given me a unique perspective—I learn by doing, 
-                        breaking things, and building them back better. Every project is an opportunity 
-                        to explore new technologies and push my boundaries.
-                    </p>
-                </div>
-            </section>
-
-            <section id="contact" class="section fade-in delay-4">
-                <h2 class="section-title">let's connect</h2>
-                <p class="contact-text">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                </p>
-                <a href="mailto:hello@joel.dev" class="contact-button">
-                    Get in touch
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="arrow-icon">
-                        <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/>
-                    </svg>
-                </a>
-            </section>
-
-            <footer class="footer fade-in delay-5">
-                <div class="footer-time">
-                    <span id="current-time" class="time"></span>
-                    <span class="separator">•</span>
-                    <span id="current-date" class="date"></span>
-                </div>
-                <p class="footer-credit">Built with ❤️ by Joel</p>
-            </footer>
+                <footer class="footer">
+                    <div class="footer-time">
+                        <span id="current-time" class="time"></span>
+                        <span class="separator">•</span>
+                        <span id="current-date" class="date"></span>
+                    </div>
+                </footer>
+            </div>
         </div>
     </main>
 
@@ -150,21 +130,14 @@
         updateDateTime();
         setInterval(updateDateTime, 1000);
 
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const href = this.getAttribute('href');
-                
-                // Handle home link (href="#") - scroll to top
-                if (href === '#') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                    return;
-                }
-                
+        // Navigation functionality for both desktop and mobile
+        function handleNavigation(href) {
+            if (href === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
                 const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
@@ -172,15 +145,48 @@
                         block: 'start'
                     });
                 }
+            }
+            updateActiveNav(href);
+        }
+
+        function updateActiveNav(activeHref) {
+            // Update desktop nav
+            document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === activeHref) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Update mobile nav
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-target') === activeHref) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Desktop nav links
+        document.querySelectorAll('.desktop-nav .nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                handleNavigation(this.getAttribute('href'));
             });
         });
 
-        // Add active class to nav links on scroll
+        // Mobile nav buttons
+        document.querySelectorAll('.mobile-nav-link').forEach(button => {
+            button.addEventListener('click', function () {
+                handleNavigation(this.getAttribute('data-target'));
+            });
+        });
+
+        // Update active on scroll
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
+            const sections = document.querySelectorAll('[id]');
             let current = '';
+            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if (scrollY >= sectionTop - 200) {
@@ -188,17 +194,34 @@
                 }
             });
 
-            navLinks.forEach(link => {
+            const activeHref = current ? `#${current}` : '#';
+            
+            // Update desktop nav
+            document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
                 link.classList.remove('active');
                 const href = link.getAttribute('href');
-                
-                // Set home link as active when at top (no section in view)
                 if (href === '#' && current === '') {
                     link.classList.add('active');
                 } else if (href === `#${current}`) {
                     link.classList.add('active');
                 }
             });
+            
+            // Update mobile nav
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.classList.remove('active');
+                const target = link.getAttribute('data-target');
+                if (target === '#' && current === '') {
+                    link.classList.add('active');
+                } else if (target === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animation on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
         });
     </script>
 </body>
