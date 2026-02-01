@@ -16,7 +16,7 @@
     --color-border: rgba(255, 255, 255, 0.08);
     --color-light: #a1a1aa;
     --color-accent: #3b82f6;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Karla', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;
     --transition-fast: 100ms ease;
     --transition-normal: 200ms ease-out;
     --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -47,6 +47,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: all 0.25s ease-out;
+    text-transform: lowercase;
 }
 
 /* Hide scrollbar */
@@ -870,6 +871,7 @@ html {
     font-size: 1.5rem;
     flex-shrink: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 .player-album-art img {
@@ -877,6 +879,8 @@ html {
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
+    display: block;
+}
 }
 
 .player-info {
