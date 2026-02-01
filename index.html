@@ -17,12 +17,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Sun rays background - cnrad.dev style -->
+    <div class="sun-rays">
+        <div class="sun-ray sun-ray-1"></div>
+        <div class="sun-ray sun-ray-2"></div>
+        <div class="sun-ray sun-ray-3"></div>
+    </div>
+
     <!-- Bottom Floating Navigation Bar - cnrad.dev style -->
     <nav class="mobile-nav">
         <div class="mobile-nav-container">
             <button class="mobile-nav-link active" data-target="home" data-sound="true">home</button>
             <button class="mobile-nav-link" data-target="projects" data-sound="true">projects</button>
-            <button class="mobile-nav-link" data-target="music" data-sound="true">music</button>
             <button class="mobile-nav-link" data-target="skills" data-sound="true">skills</button>
         </div>
     </nav>
@@ -608,7 +614,7 @@
         setInterval(updateDateTime, 60000);
 
         // Tab navigation with smooth slide animations
-        const sections = ['home', 'projects', 'music', 'skills'];
+        const sections = ['home', 'projects', 'skills'];
         let currentSection = 'home';
 
         function switchSection(targetSection, direction = 0) {
