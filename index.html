@@ -17,16 +17,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Desktop Navigation (top left) - cnrad.dev style -->
-    <nav class="desktop-nav">
-        <a href="#home" class="nav-link active" data-sound="true" data-section="home">home</a>
-        <a href="#projects" class="nav-link" data-sound="true" data-section="projects">projects</a>
-        <a href="#music" class="nav-link" data-sound="true" data-section="music">music</a>
-        <a href="#skills" class="nav-link" data-sound="true" data-section="skills">skills</a>
-        <a href="#about" class="nav-link" data-sound="true" data-section="about">about</a>
-    </nav>
-
-    <!-- Mobile Navigation (bottom floating glass bar) - cnrad.dev style -->
+    <!-- Bottom Floating Navigation Bar - cnrad.dev style -->
     <nav class="mobile-nav">
         <div class="mobile-nav-container">
             <button class="mobile-nav-link active" data-target="home" data-sound="true">home</button>
@@ -516,38 +507,6 @@
                             </div>
                         </div>
                     </section>
-
-                    <!-- About Section -->
-                    <section id="about" class="tab-panel fade-container">
-                        <h1 class="section-header">About</h1>
-                        <p class="section-subtitle">A bit more about me.</p>
-                        
-                        <div class="section-block">
-                            <p class="bio">
-                                I'm a self-taught full-stack software engineer with a passion for building resilient, 
-                                scalable systems. I started coding when I was young, and since then, I've been hooked 
-                                on solving complex problems with elegant code.
-                            </p>
-                        </div>
-
-                        <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">What I Do</h3>
-                            <div class="philosophy-list">
-                                <p>- Design and implement distributed systems</p>
-                                <p>- Build performant full-stack applications</p>
-                                <p>- Architect cloud-native solutions</p>
-                                <p>- Focus on security and best practices</p>
-                            </div>
-                        </div>
-
-                        <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">Get in Touch</h3>
-                            <p class="bio" style="margin-bottom: 0.5rem;">
-                                Open to discussing challenging projects, system architecture, or engineering opportunities.
-                            </p>
-                            <a href="mailto:hello@joel.dev" class="contact-link" data-sound="true">hello@joel.dev →</a>
-                        </div>
-                    </section>
                 </div>
 
                 <footer class="footer">
@@ -598,7 +557,7 @@
         setInterval(updateDateTime, 60000);
 
         // Tab navigation with smooth slide animations
-        const sections = ['home', 'projects', 'music', 'skills', 'about'];
+        const sections = ['home', 'projects', 'music', 'skills'];
         let currentSection = 'home';
 
         function switchSection(targetSection, direction = 0) {
@@ -636,15 +595,7 @@
         }
 
         function updateActiveNav(activeSection) {
-            // Update desktop nav
-            document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-section') === activeSection) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Update mobile nav
+            // Update bottom nav
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-target') === activeSection) {
@@ -653,16 +604,7 @@
             });
         }
 
-        // Desktop nav links
-        document.querySelectorAll('.desktop-nav .nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = this.getAttribute('data-section');
-                switchSection(section);
-            });
-        });
-
-        // Mobile nav buttons
+        // Bottom nav buttons
         document.querySelectorAll('.mobile-nav-link').forEach(button => {
             button.addEventListener('click', function() {
                 const section = this.getAttribute('data-target');
