@@ -483,6 +483,13 @@ body {
     text-align: left;
 }
 
+/* Primary skills - bold styling */
+.skill-item .skill-name.skill-primary {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+}
+
 /* Contact Link - cnrad.dev style */
 .contact-link {
     display: inline-block;
