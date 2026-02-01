@@ -6,16 +6,21 @@
 }
 
 :root {
-    --color-primary: #000000;
-    --color-secondary: #4c4c4c;
-    --color-tertiary: #838383;
-    --color-background: #ffffff;
-    --color-surface: #f8f8f8;
-    --color-border: rgba(0, 0, 0, 0.08);
-    --color-light: #8b8b8b;
+    /* Dark theme - inspired by cubedhuang/portfolio and alii/website */
+    --color-primary: #ffffff;
+    --color-secondary: #a1a1aa;
+    --color-tertiary: #71717a;
+    --color-background: #09090b;
+    --color-surface: #18181b;
+    --color-surface-hover: #27272a;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-light: #a1a1aa;
+    --color-accent: #3b82f6;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;
     --transition-fast: 100ms ease;
     --transition-normal: 200ms ease-out;
+    --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --fade-step: 70ms;
 }
 
 html {
@@ -48,7 +53,24 @@ body {
 }
 
 ::selection {
-    background: #d1d1d1;
+    background: rgba(59, 130, 246, 0.3);
+    color: #fff;
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-surface-hover);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-tertiary);
 }
 
 /* Desktop Navigation (top left) - cnrad.dev style */
@@ -114,14 +136,14 @@ body {
     justify-content: center;
     gap: 1rem;
     padding: 0.375rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(24, 24, 27, 0.9);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(131, 131, 131, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 9999px;
     box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.05),
-        0 0 0 1px rgba(0, 0, 0, 0.02);
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
     font-size: 0.875rem;
 }
 
@@ -151,7 +173,7 @@ body {
 .mobile-nav-link.active {
     color: var(--color-primary);
     font-weight: 500;
-    background: rgba(131, 131, 131, 0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Main Content - cnrad.dev layout */
@@ -339,7 +361,7 @@ body {
 }
 
 .project-card:hover .project-name {
-    color: #1d4ed8;
+    color: var(--color-accent);
 }
 
 .project-header {
@@ -500,8 +522,322 @@ body {
     }
 }
 
+/* Slide animations - inspired by cubedhuang/portfolio */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-1 * 2rem * var(--direction, 1)));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(calc(2rem * var(--direction, 1)));
+    }
+}
+
+/* Staggered fade-in animation */
+.fade-container > * {
+    animation: fadeIn 0.7s cubic-bezier(0.37, 0.69, 0.39, 0.99) backwards;
+}
+
+.fade-container > *:nth-child(1) { animation-delay: calc(1 * var(--fade-step)); }
+.fade-container > *:nth-child(2) { animation-delay: calc(2 * var(--fade-step)); }
+.fade-container > *:nth-child(3) { animation-delay: calc(3 * var(--fade-step)); }
+.fade-container > *:nth-child(4) { animation-delay: calc(4 * var(--fade-step)); }
+.fade-container > *:nth-child(5) { animation-delay: calc(5 * var(--fade-step)); }
+.fade-container > *:nth-child(6) { animation-delay: calc(6 * var(--fade-step)); }
+.fade-container > *:nth-child(7) { animation-delay: calc(7 * var(--fade-step)); }
+.fade-container > *:nth-child(8) { animation-delay: calc(8 * var(--fade-step)); }
+.fade-container > *:nth-child(9) { animation-delay: calc(9 * var(--fade-step)); }
+.fade-container > *:nth-child(10) { animation-delay: calc(10 * var(--fade-step)); }
+.fade-container > *:nth-child(11) { animation-delay: calc(11 * var(--fade-step)); }
+.fade-container > *:nth-child(12) { animation-delay: calc(12 * var(--fade-step)); }
+
+/* Tab content slide transitions */
+.tab-content {
+    position: relative;
+}
+
+.tab-panel {
+    display: none;
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel.slide-left {
+    --direction: -1;
+}
+
+.tab-panel.slide-right {
+    --direction: 1;
+}
+
+/* Enhanced Projects Grid - inspired by cubedhuang/portfolio */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.project-card-enhanced {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.project-card-enhanced:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(135deg, var(--color-surface-hover) 0%, var(--color-surface) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-tertiary);
+    font-size: 0.875rem;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+}
+
+.project-card-enhanced:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: var(--color-tertiary);
+    font-size: 2rem;
+}
+
+.project-content {
+    padding: 1rem;
+    flex: 1;
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-fast);
+}
+
+.project-card-enhanced:hover .project-title {
+    color: var(--color-accent);
+}
+
+.project-description {
+    font-size: 0.875rem;
+    color: var(--color-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tag-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-accent);
+    border-radius: 0.375rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Music Section - inspired by cubedhuang/portfolio */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .music-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .music-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.music-card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    text-decoration: none;
+    background: var(--color-surface);
+}
+
+.music-card:hover {
+    transform: scale(1.03);
+}
+
+.music-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all var(--transition-smooth);
+}
+
+.music-card:hover img {
+    filter: brightness(0.5);
+    transform: scale(1.02);
+}
+
+.music-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: var(--color-tertiary);
+    font-size: 2rem;
+}
+
+.music-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all var(--transition-smooth);
+}
+
+.music-card:hover .music-overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.music-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+}
+
+.music-artist {
+    font-size: 0.75rem;
+    color: var(--color-secondary);
+}
+
+/* Tab Navigation */
+.tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    color: var(--color-tertiary);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.tab-btn:hover {
+    color: var(--color-secondary);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tab-btn.active {
+    color: var(--color-primary);
+    background: var(--color-surface);
+    border-color: var(--color-accent);
+}
+
+/* Section header */
+.section-header {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 1024px) {
+    .section-header {
+        font-size: 3rem;
+    }
+}
+
+.section-subtitle {
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+}
+
 /* Focus styles for accessibility */
 *:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
