@@ -3,35 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joel</title>
-    <meta name="description" content="Self-taught full stack engineer with a passion for building elegant solutions.">
-    <meta property="og:title" content="Joel">
-    <meta property="og:description" content="Self-taught full stack engineer with a passion for building elegant solutions.">
+    <title>joel</title>
+    <meta name="description" content="self-taught full stack engineer with a passion for building elegant solutions.">
+    <meta property="og:title" content="joel">
+    <meta property="og:description" content="self-taught full stack engineer with a passion for building elegant solutions.">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Joel">
-    <meta name="twitter:description" content="Self-taught full stack engineer with a passion for building elegant solutions.">
+    <meta name="twitter:title" content="joel">
+    <meta name="twitter:description" content="self-taught full stack engineer with a passion for building elegant solutions.">
     <meta name="theme-color" content="#09090b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Desktop Navigation (top left) - cnrad.dev style -->
-    <nav class="desktop-nav">
-        <a href="#home" class="nav-link active" data-sound="true" data-section="home">home</a>
-        <a href="#projects" class="nav-link" data-sound="true" data-section="projects">projects</a>
-        <a href="#music" class="nav-link" data-sound="true" data-section="music">music</a>
-        <a href="#skills" class="nav-link" data-sound="true" data-section="skills">skills</a>
-        <a href="#about" class="nav-link" data-sound="true" data-section="about">about</a>
-    </nav>
+    <!-- Sun rays background - cnrad.dev style -->
+    <div class="sun-rays">
+        <div class="sun-ray sun-ray-1"></div>
+        <div class="sun-ray sun-ray-2"></div>
+        <div class="sun-ray sun-ray-3"></div>
+    </div>
 
-    <!-- Mobile Navigation (bottom floating glass bar) - cnrad.dev style -->
+    <!-- Bottom Floating Navigation Bar - cnrad.dev style -->
     <nav class="mobile-nav">
         <div class="mobile-nav-container">
             <button class="mobile-nav-link active" data-target="home" data-sound="true">home</button>
             <button class="mobile-nav-link" data-target="projects" data-sound="true">projects</button>
-            <button class="mobile-nav-link" data-target="music" data-sound="true">music</button>
             <button class="mobile-nav-link" data-target="skills" data-sound="true">skills</button>
         </div>
     </nav>
@@ -44,14 +41,14 @@
                     <!-- Home Section -->
                     <section id="home" class="tab-panel active fade-container">
                         <div class="hero-section">
-                            <h1 class="section-header">Joel</h1>
-                            <p class="section-subtitle">Self-taught full-stack engineer</p>
+                            <h1 class="section-header">joel</h1>
+                            <p class="section-subtitle">backend & systems engineer</p>
                         </div>
                         
                         <div class="section-block">
                             <p class="bio">
-                                self-taught, full-stack software engineer with a passion for building resilient, 
-                                scalable systems. i craft elegant solutions that work beautifully under pressure.
+                                full-stack engineer with a passion for building resilient, scalable systems. 
+                                i craft elegant solutions that work beautifully under pressure.
                             </p>
                             
                             <div class="social-links" style="margin-top: 1rem;">
@@ -89,264 +86,43 @@
 
                     <!-- Projects Section -->
                     <section id="projects" class="tab-panel fade-container">
-                        <h1 class="section-header">Projects</h1>
-                        <p class="section-subtitle">Some of my projects.</p>
+                        <h1 class="section-header">projects</h1>
+                        <p class="section-subtitle">some of my projects.</p>
                         
                         <div class="projects-grid">
-                            <!-- Project 1 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
+                            <!-- Project 1: Fluffy Train -->
+                            <a href="https://github.com/Lovuwer/FluffyTrain" target="_blank" rel="noopener noreferrer" class="project-card-enhanced" data-sound="true">
                                 <div class="project-image">
-                                    <div class="project-image-placeholder">📦</div>
+                                    <img src="images/IMG-20260201-WA0002.jpg" alt="fluffy train">
                                 </div>
                                 <div class="project-content">
-                                    <h4 class="project-title">Project 1</h4>
+                                    <h4 class="project-title">fluffy train</h4>
                                     <p class="project-description">
-                                        Description for Project 1. Add your own description here.
+                                        a high-performance, redis-backed distributed job queue system written in go. designed for reliability, scalability, and ease of use.
                                     </p>
                                     <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
+                                        <span class="project-tag-badge">go</span>
+                                        <span class="project-tag-badge">redis</span>
+                                        <span class="project-tag-badge">distributed</span>
                                     </div>
                                 </div>
                             </a>
 
-                            <!-- Project 2 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
+                            <!-- Project 2: LLM-GuardRailProxy -->
+                            <a href="https://github.com/Lovuwer/LLM-GuardRailProxy" target="_blank" rel="noopener noreferrer" class="project-card-enhanced" data-sound="true">
                                 <div class="project-image">
-                                    <div class="project-image-placeholder">🚀</div>
+                                    <img src="images/Screenshot_20260201_102548_Chrome.jpg" alt="llm-guardrailproxy">
                                 </div>
                                 <div class="project-content">
-                                    <h4 class="project-title">Project 2</h4>
+                                    <h4 class="project-title">llm-guardrailproxy</h4>
                                     <p class="project-description">
-                                        Description for Project 2. Add your own description here.
+                                        a security layer that sits between users and ai models (like gemini) and makes sure nobody tries any malicious attacks. it checks prompts before they reach the ai to block harmful attempts.
                                     </p>
                                     <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
+                                        <span class="project-tag-badge">security</span>
+                                        <span class="project-tag-badge">ai</span>
+                                        <span class="project-tag-badge">proxy</span>
                                     </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 3 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">⚡</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 3</h4>
-                                    <p class="project-description">
-                                        Description for Project 3. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 4 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">🔧</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 4</h4>
-                                    <p class="project-description">
-                                        Description for Project 4. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 5 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">🎯</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 5</h4>
-                                    <p class="project-description">
-                                        Description for Project 5. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 6 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">💡</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 6</h4>
-                                    <p class="project-description">
-                                        Description for Project 6. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 7 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">🌟</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 7</h4>
-                                    <p class="project-description">
-                                        Description for Project 7. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 8 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">🔥</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 8</h4>
-                                    <p class="project-description">
-                                        Description for Project 8. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 9 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">🎨</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 9</h4>
-                                    <p class="project-description">
-                                        Description for Project 9. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Project 10 -->
-                            <a href="#" class="project-card-enhanced" data-sound="true">
-                                <div class="project-image">
-                                    <div class="project-image-placeholder">🏆</div>
-                                </div>
-                                <div class="project-content">
-                                    <h4 class="project-title">Project 10</h4>
-                                    <p class="project-description">
-                                        Description for Project 10. Add your own description here.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag-badge">Tag 1</span>
-                                        <span class="project-tag-badge">Tag 2</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </section>
-
-                    <!-- Music Section -->
-                    <section id="music" class="tab-panel fade-container">
-                        <h1 class="section-header">Music</h1>
-                        <p class="section-subtitle">Tracks I've been listening to.</p>
-                        
-                        <!-- Time Range Tabs -->
-                        <div class="tab-nav">
-                            <button class="tab-btn active" data-range="recent">Past Month</button>
-                            <button class="tab-btn" data-range="medium">Past 6 Months</button>
-                            <button class="tab-btn" data-range="alltime">All Time</button>
-                        </div>
-                        
-                        <div class="music-grid">
-                            <!-- Track 1 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎵</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 1</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 2 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎶</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 2</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 3 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎧</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 3</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 4 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎸</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 4</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 5 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎹</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 5</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 6 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🥁</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 6</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 7 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎷</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 7</p>
-                                    <p class="music-artist">Artist Name</p>
-                                </div>
-                            </a>
-
-                            <!-- Track 8 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎺</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 8</p>
-                                    <p class="music-artist">Artist Name</p>
                                 </div>
                             </a>
                         </div>
@@ -354,75 +130,52 @@
 
                     <!-- Skills Section -->
                     <section id="skills" class="tab-panel fade-container">
-                        <h1 class="section-header">Skills</h1>
-                        <p class="section-subtitle">Technologies and tools I work with.</p>
+                        <h1 class="section-header">skills</h1>
+                        <p class="section-subtitle">technologies and tools i work with.</p>
                         
                         <div class="section-block">
-                            <h3 class="section-title">Languages</h3>
+                            <h3 class="section-title">primary stack</h3>
                             <div class="skills-grid">
                                 <div class="skill-item">
-                                    <span class="skill-name">JavaScript • TypeScript • Rust • Go • Python • Java</span>
+                                    <span class="skill-name skill-primary">go • python • typescript</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">Frontend</h3>
+                            <h3 class="section-title">secondary</h3>
                             <div class="skills-grid">
                                 <div class="skill-item">
-                                    <span class="skill-name">React • Next.js • Vue • Svelte • TailwindCSS</span>
+                                    <span class="skill-name">rust • java</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">Backend</h3>
+                            <h3 class="section-title">frontend</h3>
                             <div class="skills-grid">
                                 <div class="skill-item">
-                                    <span class="skill-name">Node.js • Express • FastAPI • PostgreSQL • Redis • MongoDB</span>
+                                    <span class="skill-name">react • next.js • vue • svelte • tailwindcss</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">DevOps & Tools</h3>
+                            <h3 class="section-title">backend</h3>
                             <div class="skills-grid">
                                 <div class="skill-item">
-                                    <span class="skill-name">Docker • Kubernetes • AWS • Git • Linux • CI/CD</span>
+                                    <span class="skill-name">node.js • express • fastapi • postgresql • redis • mongodb</span>
                                 </div>
                             </div>
                         </div>
-                    </section>
-
-                    <!-- About Section -->
-                    <section id="about" class="tab-panel fade-container">
-                        <h1 class="section-header">About</h1>
-                        <p class="section-subtitle">A bit more about me.</p>
-                        
-                        <div class="section-block">
-                            <p class="bio">
-                                I'm a self-taught full-stack software engineer with a passion for building resilient, 
-                                scalable systems. I started coding when I was young, and since then, I've been hooked 
-                                on solving complex problems with elegant code.
-                            </p>
-                        </div>
 
                         <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">What I Do</h3>
-                            <div class="philosophy-list">
-                                <p>- Design and implement distributed systems</p>
-                                <p>- Build performant full-stack applications</p>
-                                <p>- Architect cloud-native solutions</p>
-                                <p>- Focus on security and best practices</p>
+                            <h3 class="section-title">devops & tools</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">docker • kubernetes • aws • git • linux • ci/cd</span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="section-block" style="margin-top: 1.5rem;">
-                            <h3 class="section-title">Get in Touch</h3>
-                            <p class="bio" style="margin-bottom: 0.5rem;">
-                                Open to discussing challenging projects, system architecture, or engineering opportunities.
-                            </p>
-                            <a href="mailto:hello@joel.dev" class="contact-link" data-sound="true">hello@joel.dev →</a>
                         </div>
                     </section>
                 </div>
@@ -475,7 +228,7 @@
         setInterval(updateDateTime, 60000);
 
         // Tab navigation with smooth slide animations
-        const sections = ['home', 'projects', 'music', 'skills', 'about'];
+        const sections = ['home', 'projects', 'skills'];
         let currentSection = 'home';
 
         function switchSection(targetSection, direction = 0) {
@@ -513,15 +266,7 @@
         }
 
         function updateActiveNav(activeSection) {
-            // Update desktop nav
-            document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-section') === activeSection) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Update mobile nav
+            // Update bottom nav
             document.querySelectorAll('.mobile-nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-target') === activeSection) {
@@ -530,16 +275,7 @@
             });
         }
 
-        // Desktop nav links
-        document.querySelectorAll('.desktop-nav .nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = this.getAttribute('data-section');
-                switchSection(section);
-            });
-        });
-
-        // Mobile nav buttons
+        // Bottom nav buttons
         document.querySelectorAll('.mobile-nav-link').forEach(button => {
             button.addEventListener('click', function() {
                 const section = this.getAttribute('data-target');
@@ -547,17 +283,8 @@
             });
         });
 
-        // Music range tabs
-        document.querySelectorAll('.tab-btn[data-range]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.tab-btn[data-range]').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                playPopSound();
-            });
-        });
-
         // Social links and other clickable elements with sound
-        document.querySelectorAll('.social-link, .project-card-enhanced, .contact-link, .music-card').forEach(link => {
+        document.querySelectorAll('.social-link, .project-card-enhanced, .contact-link').forEach(link => {
             link.addEventListener('click', function() {
                 playPopSound();
             });
