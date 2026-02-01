@@ -93,7 +93,7 @@
                             <!-- Project 1: Fluffy Train -->
                             <a href="https://github.com/Lovuwer/FluffyTrain" target="_blank" rel="noopener noreferrer" class="project-card-enhanced" data-sound="true">
                                 <div class="project-image">
-                                    <img src="https://cdn.discordapp.com/attachments/1447493461132578977/1467388640341528628/IMG-20260201-WA0002.jpg" alt="fluffy train">
+                                    <img src="images/IMG-20260201-WA0002.jpg" alt="fluffy train">
                                 </div>
                                 <div class="project-content">
                                     <h4 class="project-title">fluffy train</h4>
@@ -111,7 +111,7 @@
                             <!-- Project 2: LLM-GuardRailProxy -->
                             <a href="https://github.com/Lovuwer/LLM-GuardRailProxy" target="_blank" rel="noopener noreferrer" class="project-card-enhanced" data-sound="true">
                                 <div class="project-image">
-                                    <img src="https://cdn.discordapp.com/attachments/1447493461132578977/1467382997635567771/Screenshot_20260201_102548_Chrome.jpg" alt="llm-guardrailproxy">
+                                    <img src="images/Screenshot_20260201_102548_Chrome.jpg" alt="llm-guardrailproxy">
                                 </div>
                                 <div class="project-content">
                                     <h4 class="project-title">llm-guardrailproxy</h4>
@@ -283,17 +283,8 @@
             });
         });
 
-        // Music range tabs
-        document.querySelectorAll('.tab-btn[data-range]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.tab-btn[data-range]').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                playPopSound();
-            });
-        });
-
         // Social links and other clickable elements with sound
-        document.querySelectorAll('.social-link, .project-card-enhanced, .contact-link, .music-card').forEach(link => {
+        document.querySelectorAll('.social-link, .project-card-enhanced, .contact-link').forEach(link => {
             link.addEventListener('click', function() {
                 playPopSound();
             });
@@ -337,233 +328,6 @@
                 }
             }
         });
-
-        // Music Player State
-        let isPlaying = false;
-        let currentSongIndex = 0;
-        let audioPlayer = null;
-        let progressInterval = null;
-        
-        // Song data with audio (using royalty-free preview samples)
-        const songs = [];
-        document.querySelectorAll('.song-item').forEach((item, index) => {
-            songs.push({
-                index: index,
-                track: item.dataset.track || item.querySelector('.song-name').textContent,
-                artist: item.dataset.artist || item.querySelector('.song-artist').textContent,
-                cover: item.dataset.cover || item.querySelector('.song-cover img')?.src,
-                duration: item.dataset.duration || '0:30',
-                element: item
-            });
-        });
-
-        // Initialize audio player
-        function initAudioPlayer() {
-            if (!audioPlayer) {
-                audioPlayer = new Audio();
-                audioPlayer.volume = 0.7;
-                
-                audioPlayer.addEventListener('ended', () => {
-                    nextSong();
-                });
-                
-                audioPlayer.addEventListener('timeupdate', updateProgress);
-                audioPlayer.addEventListener('loadedmetadata', () => {
-                    updateTotalTime();
-                });
-            }
-        }
-
-        function updateProgress() {
-            if (audioPlayer && audioPlayer.duration) {
-                const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-                document.getElementById('progress').style.width = progress + '%';
-                
-                const minutes = Math.floor(audioPlayer.currentTime / 60);
-                const seconds = Math.floor(audioPlayer.currentTime % 60);
-                document.getElementById('current-time').textContent = 
-                    minutes + ':' + seconds.toString().padStart(2, '0');
-            }
-        }
-
-        function updateTotalTime() {
-            if (audioPlayer && audioPlayer.duration) {
-                const minutes = Math.floor(audioPlayer.duration / 60);
-                const seconds = Math.floor(audioPlayer.duration % 60);
-                document.getElementById('total-time').textContent = 
-                    minutes + ':' + seconds.toString().padStart(2, '0');
-            }
-        }
-
-        function loadSong(index) {
-            if (index < 0 || index >= songs.length) return;
-            
-            currentSongIndex = index;
-            const song = songs[index];
-            
-            // Update player UI
-            document.getElementById('player-track').textContent = song.track;
-            document.getElementById('player-artist').textContent = song.artist;
-            document.getElementById('player-art').innerHTML = 
-                '<img src="' + song.cover + '" alt="Now Playing">';
-            document.getElementById('total-time').textContent = song.duration;
-            document.getElementById('current-time').textContent = '0:00';
-            document.getElementById('progress').style.width = '0%';
-            
-            // Highlight active song
-            songs.forEach(s => s.element.classList.remove('active', 'playing'));
-            song.element.classList.add('active');
-        }
-
-        function togglePlay() {
-            initAudioPlayer();
-            
-            if (isPlaying) {
-                pauseSong();
-            } else {
-                playSong();
-            }
-        }
-
-        function playSong() {
-            isPlaying = true;
-            const song = songs[currentSongIndex];
-            song.element.classList.add('playing');
-            
-            // Update play button to show pause icon
-            document.querySelector('.play-icon').style.display = 'none';
-            document.querySelector('.pause-icon').style.display = 'block';
-            
-            // Add playing animation to album art
-            document.getElementById('player-art').classList.add('playing');
-            
-            // Simulate audio playback with progress animation
-            simulatePlayback();
-        }
-
-        function pauseSong() {
-            isPlaying = false;
-            const song = songs[currentSongIndex];
-            song.element.classList.remove('playing');
-            
-            // Update play button to show play icon
-            document.querySelector('.play-icon').style.display = 'block';
-            document.querySelector('.pause-icon').style.display = 'none';
-            
-            // Remove playing animation
-            document.getElementById('player-art').classList.remove('playing');
-            
-            // Stop progress simulation
-            if (progressInterval) {
-                clearInterval(progressInterval);
-                progressInterval = null;
-            }
-        }
-
-        function simulatePlayback() {
-            // Simulate song progress (30 seconds for demo)
-            let currentTime = 0;
-            const totalTime = 30;
-            
-            if (progressInterval) clearInterval(progressInterval);
-            
-            progressInterval = setInterval(() => {
-                if (!isPlaying) return;
-                
-                currentTime += 0.1;
-                const progress = (currentTime / totalTime) * 100;
-                
-                document.getElementById('progress').style.width = Math.min(progress, 100) + '%';
-                
-                const minutes = Math.floor(currentTime / 60);
-                const seconds = Math.floor(currentTime % 60);
-                document.getElementById('current-time').textContent = 
-                    minutes + ':' + seconds.toString().padStart(2, '0');
-                
-                if (currentTime >= totalTime) {
-                    clearInterval(progressInterval);
-                    nextSong();
-                }
-            }, 100);
-        }
-
-        function nextSong() {
-            const wasPlaying = isPlaying;
-            if (isPlaying) pauseSong();
-            
-            currentSongIndex = (currentSongIndex + 1) % songs.length;
-            loadSong(currentSongIndex);
-            
-            if (wasPlaying) {
-                setTimeout(() => playSong(), 100);
-            }
-        }
-
-        function prevSong() {
-            const wasPlaying = isPlaying;
-            if (isPlaying) pauseSong();
-            
-            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-            loadSong(currentSongIndex);
-            
-            if (wasPlaying) {
-                setTimeout(() => playSong(), 100);
-            }
-        }
-
-        // Song item click handlers
-        document.querySelectorAll('.song-item').forEach((item, index) => {
-            item.addEventListener('click', function() {
-                playPopSound();
-                
-                const wasPlaying = isPlaying;
-                if (isPlaying) pauseSong();
-                
-                loadSong(index);
-                
-                // Auto-play when clicking a song
-                setTimeout(() => playSong(), 100);
-            });
-        });
-
-        // Player control handlers
-        document.getElementById('main-play-btn').addEventListener('click', function(e) {
-            e.stopPropagation();
-            playPopSound();
-            togglePlay();
-        });
-
-        document.getElementById('prev-btn').addEventListener('click', function(e) {
-            e.stopPropagation();
-            playPopSound();
-            prevSong();
-        });
-
-        document.getElementById('next-btn').addEventListener('click', function(e) {
-            e.stopPropagation();
-            playPopSound();
-            nextSong();
-        });
-
-        // Progress bar click to seek
-        document.getElementById('progress-bar').addEventListener('click', function(e) {
-            const rect = this.getBoundingClientRect();
-            const percent = (e.clientX - rect.left) / rect.width;
-            document.getElementById('progress').style.width = (percent * 100) + '%';
-            
-            // Update time display
-            const totalSeconds = 30; // Demo duration
-            const currentSeconds = percent * totalSeconds;
-            const minutes = Math.floor(currentSeconds / 60);
-            const seconds = Math.floor(currentSeconds % 60);
-            document.getElementById('current-time').textContent = 
-                minutes + ':' + seconds.toString().padStart(2, '0');
-        });
-
-        // Load first song on init
-        if (songs.length > 0) {
-            loadSong(0);
-        }
     </script>
 </body>
 </html>
