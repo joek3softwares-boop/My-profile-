@@ -270,85 +270,184 @@
                         <h1 class="section-header">Music</h1>
                         <p class="section-subtitle">Tracks I've been listening to.</p>
                         
-                        <!-- Time Range Tabs -->
-                        <div class="tab-nav">
-                            <button class="tab-btn active" data-range="recent">Past Month</button>
-                            <button class="tab-btn" data-range="medium">Past 6 Months</button>
-                            <button class="tab-btn" data-range="alltime">All Time</button>
+                        <!-- Spotify-style Glass Player Bar -->
+                        <div class="spotify-player">
+                            <div class="player-content">
+                                <div class="player-album-art">
+                                    🎵
+                                </div>
+                                <div class="player-info">
+                                    <p class="player-track-name">SICKO MODE</p>
+                                    <p class="player-artist-name">Travis Scott ft. Drake</p>
+                                </div>
+                                <div class="player-controls">
+                                    <button class="player-btn" title="Previous">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                                    </button>
+                                    <button class="player-btn play-btn" title="Play">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                    </button>
+                                    <button class="player-btn" title="Next">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="player-progress-container">
+                                <div class="player-progress-bar">
+                                    <div class="player-progress"></div>
+                                </div>
+                                <div class="player-time">
+                                    <span>1:42</span>
+                                    <span>5:12</span>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="music-grid">
-                            <!-- Track 1 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎵</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 1</p>
-                                    <p class="music-artist">Artist Name</p>
+                        <!-- Song List -->
+                        <div class="song-list">
+                            <!-- Travis Scott -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">1</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🔥</div>
+                                <div class="song-details">
+                                    <p class="song-name">SICKO MODE</p>
+                                    <p class="song-artist">Travis Scott ft. Drake</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 2 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎶</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 2</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">5:12</span>
+                            </div>
+                            
+                            <!-- Drake -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">2</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🦂</div>
+                                <div class="song-details">
+                                    <p class="song-name">God's Plan</p>
+                                    <p class="song-artist">Drake</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 3 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎧</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 3</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">3:19</span>
+                            </div>
+                            
+                            <!-- Playboi Carti -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">3</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🦋</div>
+                                <div class="song-details">
+                                    <p class="song-name">Magnolia</p>
+                                    <p class="song-artist">Playboi Carti</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 4 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎸</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 4</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">3:00</span>
+                            </div>
+                            
+                            <!-- The Weeknd -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">4</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🌙</div>
+                                <div class="song-details">
+                                    <p class="song-name">Blinding Lights</p>
+                                    <p class="song-artist">The Weeknd</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 5 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎹</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 5</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">3:20</span>
+                            </div>
+                            
+                            <!-- Bruno Mars -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">5</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🎤</div>
+                                <div class="song-details">
+                                    <p class="song-name">24K Magic</p>
+                                    <p class="song-artist">Bruno Mars</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 6 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🥁</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 6</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">3:46</span>
+                            </div>
+                            
+                            <!-- Eminem -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">6</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🎧</div>
+                                <div class="song-details">
+                                    <p class="song-name">Lose Yourself</p>
+                                    <p class="song-artist">Eminem</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 7 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎷</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 7</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">5:26</span>
+                            </div>
+                            
+                            <!-- Snoop Dogg -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">7</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🌿</div>
+                                <div class="song-details">
+                                    <p class="song-name">Drop It Like It's Hot</p>
+                                    <p class="song-artist">Snoop Dogg ft. Pharrell</p>
                                 </div>
-                            </a>
-
-                            <!-- Track 8 -->
-                            <a href="#" class="music-card" data-sound="true">
-                                <div class="music-card-placeholder">🎺</div>
-                                <div class="music-overlay">
-                                    <p class="music-title">Track Title 8</p>
-                                    <p class="music-artist">Artist Name</p>
+                                <span class="song-duration">4:30</span>
+                            </div>
+                            
+                            <!-- ABBA -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">8</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">💃</div>
+                                <div class="song-details">
+                                    <p class="song-name">Dancing Queen</p>
+                                    <p class="song-artist">ABBA</p>
                                 </div>
-                            </a>
+                                <span class="song-duration">3:51</span>
+                            </div>
+                            
+                            <!-- Travis Scott 2 -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">9</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">🌵</div>
+                                <div class="song-details">
+                                    <p class="song-name">goosebumps</p>
+                                    <p class="song-artist">Travis Scott ft. Kendrick Lamar</p>
+                                </div>
+                                <span class="song-duration">4:03</span>
+                            </div>
+                            
+                            <!-- Drake 2 -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">10</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">💎</div>
+                                <div class="song-details">
+                                    <p class="song-name">Hotline Bling</p>
+                                    <p class="song-artist">Drake</p>
+                                </div>
+                                <span class="song-duration">4:27</span>
+                            </div>
+                            
+                            <!-- The Weeknd 2 -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">11</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">⭐</div>
+                                <div class="song-details">
+                                    <p class="song-name">Starboy</p>
+                                    <p class="song-artist">The Weeknd ft. Daft Punk</p>
+                                </div>
+                                <span class="song-duration">3:50</span>
+                            </div>
+                            
+                            <!-- Eminem 2 -->
+                            <div class="song-item" data-sound="true">
+                                <span class="song-index">12</span>
+                                <span class="song-play-icon">▶</span>
+                                <div class="song-cover">💀</div>
+                                <div class="song-details">
+                                    <p class="song-name">Without Me</p>
+                                    <p class="song-artist">Eminem</p>
+                                </div>
+                                <span class="song-duration">4:50</span>
+                            </div>
                         </div>
                     </section>
 
@@ -600,6 +699,38 @@
                     switchSection(sections[currentIndex + 1], 1);
                 }
             }
+        });
+
+        // Song item click handlers for Spotify player
+        document.querySelectorAll('.song-item').forEach(item => {
+            item.addEventListener('click', function() {
+                playPopSound();
+                
+                // Update player with clicked song info
+                const songName = this.querySelector('.song-name').textContent;
+                const artistName = this.querySelector('.song-artist').textContent;
+                const emoji = this.querySelector('.song-cover').textContent;
+                
+                document.querySelector('.player-track-name').textContent = songName;
+                document.querySelector('.player-artist-name').textContent = artistName;
+                document.querySelector('.player-album-art').textContent = emoji;
+                
+                // Reset progress bar using class
+                const progressBar = document.querySelector('.player-progress');
+                progressBar.classList.add('reset');
+                setTimeout(() => progressBar.classList.remove('reset'), 50);
+                
+                // Highlight active song using class
+                document.querySelectorAll('.song-item').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Player button handlers
+        document.querySelectorAll('.player-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                playPopSound();
+            });
         });
     </script>
 </body>
