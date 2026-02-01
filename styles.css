@@ -1090,3 +1090,68 @@ html {
     border-radius: 0.75rem;
     padding: 1rem;
 }
+
+/* Playing state animations */
+.player-album-art.playing img {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.4);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 20px 5px rgba(29, 185, 84, 0.2);
+    }
+}
+
+.song-item.playing {
+    background: rgba(29, 185, 84, 0.15);
+    border-color: rgba(29, 185, 84, 0.3);
+}
+
+.song-item.playing .song-name {
+    color: #1db954;
+}
+
+.song-item.playing .song-index {
+    display: none;
+}
+
+.song-item.playing .song-play-icon {
+    display: block;
+    animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Enhanced progress bar */
+.player-progress-bar {
+    cursor: pointer;
+}
+
+.player-progress-bar:hover {
+    height: 6px;
+}
+
+/* Larger play button on mobile */
+@media (max-width: 640px) {
+    .player-btn.play-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .player-btn.play-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
